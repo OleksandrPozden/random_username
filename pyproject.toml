@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "random_username"
+version = "0.0.1"
+authors = [
+  { name="Oleksandr Pozden", email="oleksandr.pozden@gmail.com" },
+]
+description = "It is rebuilt williexu's random_username package with a couple of new enhancements. Original repo: https://github.com/williexu/random_username"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/OleksandrPozden/random_username"
+"Bug Tracker" = "https://github.com/OleksandrPozden/random_username/issues"

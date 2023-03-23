@@ -19,11 +19,16 @@ class UsernameGenerator(object):
                         cls._nouns.append(line.strip())
         return cls._instance
 
-    def generate_username(self):
+    def generate_username(self, num_digits=1, *args, **kwargs):
+        if num_digits < 1:
+            raise ValueError("num_digits should be greater than 0")
         adjective = random.choice(self._adjectives)
         noun = random.choice(self._nouns).capitalize()
-        number = str(random.randrange(10))
-        return adjective + noun + number
+        number = int(
+            random.random()
+            * (10**num_digits)
+        )
+        return adjective + noun + str(number)
 
-    def generate_usernames(self, num_results=1):
-        return [self.generate_username() for _ in range(num_results)]
+    def generate_usernames(self, num_results, *args, **kwargs):
+        return [self.generate_username(*args, **kwargs) for _ in range(num_results)]
